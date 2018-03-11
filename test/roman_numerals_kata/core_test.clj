@@ -3,15 +3,19 @@
             [roman-numerals-kata.core :refer :all]))
 
 (defn to-roman [n]
-  (case n
-    4 "IV"
-    5 "V"
-    6 "VI"
-    7 "VII"
-    8 "VIII"
-    9 "IX"
-    10 "X"
-    (apply str (repeat n "I"))))
+  (let [result ""
+        remaining n]
+    (cond
+        4 "IV"
+        5 "V"
+        6 "VI"
+        7 "VII"
+        8 "VIII"
+        9 "IX"
+        10 "X"
+        (apply str (repeat n "I")))
+      )
+    )
 
 (deftest to-roman-produces-romans
   (testing "simplistic-romans"
